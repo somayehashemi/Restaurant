@@ -109,7 +109,7 @@ menuClose.addEventListener("click", function() {
     mainNav.classList.remove("show");
     menuOverlay.classList.remove("active");
 });
-// کلیک کنیم خارج منو، منو بسته بشه
+// کلیک کنیم خارج منو، منو بسته بfشه
 menuOverlay.addEventListener("click", function() {
     mainNav.classList.remove("show");
     menuOverlay.classList.remove("active");
