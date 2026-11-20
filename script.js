@@ -114,3 +114,37 @@ menuOverlay.addEventListener("click", function() {
     mainNav.classList.remove("show");
     menuOverlay.classList.remove("active");
 });
+// فرم تماس فوتر
+const contactForm = document.querySelector(".contact-form");
+
+contactForm.addEventListener("submit", function (event) {
+
+    // جلوگیری از ارسال و رفرش شدن صفحه
+    event.preventDefault();
+
+    // دریافت مقادیر ورودی‌ها
+    const name = document.querySelector("#customer-name").value.trim();
+    const email = document.querySelector("#customer-email").value.trim();
+    const message = document.querySelector("#customer-message").value.trim();
+
+    // بررسی خالی بودن فیلدها
+    if (name === "" || email === "" || message === "") {
+        alert("لطفاً تمام فیلدها را پر کنید.");
+        return;
+    }
+
+    // بررسی فرمت ایمیل
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailPattern.test(email)) {
+        alert("لطفاً یک ایمیل معتبر وارد کنید.");
+        return;
+    }
+
+    // پیام موفقیت
+    alert("پیام شما با موفقیت ثبت شد. ممنون از ارتباط شما ❤️");
+
+    // پاک کردن فرم
+    contactForm.reset();
+
+});
